@@ -26,9 +26,9 @@ Route::prefix('customer')->middleware('auth', 'xss', 'verified.user')->group(fun
         Route::get('customer-comment-status/{key}', [CommentController::class, 'commentStatus'])->name('customer.comment-status');
     });
     Route::post('get-video', [PostController::class, 'getVideoByUrl'])->name('customer.get-video-by-url');
-    Route::post('posts-subcategory', [PostController::class, 'categoryFilter'])->name('posts.categoryFilter');
-    Route::post('posts/language', [PostController::class, 'language'])->name('posts.language');
-    Route::post('posts/category', [PostController::class, 'category'])->name('posts.category');
+    Route::post('posts-subcategory', [PostController::class, 'categoryFilter'])->name('customer.posts.categoryFilter');
+    Route::post('posts/language', [PostController::class, 'language'])->name('customer.posts.language');
+    Route::post('posts/category', [PostController::class, 'category'])->name('customer.posts.category');
     Route::get('/manage-subscription', [SubscriptionController::class, 'index'])->name('subscription.index');
     Route::get('manage-subscription/upgrade',
         [SubscriptionController::class, 'upgrade'])->name('subscription.upgrade');

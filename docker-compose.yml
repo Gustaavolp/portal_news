@@ -33,14 +33,14 @@ services:
       - laravel_network
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.laravel.rule=Host(`news.avoup.com`)"
+      - "traefik.http.routers.laravel.rule=Host(`unc.avoup.com`) || Host(`www.unc.avoup.com`)"
       - "traefik.http.routers.laravel.entrypoints=websecure"
       - "traefik.http.routers.laravel.tls.certresolver=leresolver"
       - "traefik.http.services.laravel.loadbalancer.server.port=80"
-      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
-      - "traefik.http.routers.laravel-insecure.rule=Host(`news.avoup.com`)"
-      - "traefik.http.routers.laravel-insecure.entrypoints=web"
-      - "traefik.http.routers.laravel-insecure.middlewares=redirect-to-https"
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"                    
+      - "traefik.http.routers.laravel-secure.rule=Host(`unc.avoup.com`) || Host(`www.unc.avoup.com`)"  
+      - "traefik.http.routers.laravel-secure.entrypoints=web"                                   
+      - "traefik.http.routers.laravel-secure.middlewares=redirect-to-https"   
 
   db:
     image: mysql:8.0
@@ -70,14 +70,16 @@ services:
       - laravel_network
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.phpmyadmin.rule=Host(`pma.news.avoup.com`)"
+      - "traefik.http.routers.phpmyadmin.rule=Host(`pma.unc.avoup.com`)"
       - "traefik.http.routers.phpmyadmin.entrypoints=websecure"
       - "traefik.http.routers.phpmyadmin.tls.certresolver=leresolver"
       - "traefik.http.services.phpmyadmin.loadbalancer.server.port=80"
-      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
-      - "traefik.http.routers.phpmyadmin-insecure.rule=Host(`pma.news.avoup.com`)"
-      - "traefik.http.routers.phpmyadmin-insecure.entrypoints=web"
-      - "traefik.http.routers.phpmyadmin-insecure.middlewares=redirect-to-https"
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"                    
+      - "traefik.http.routers.phpmyadmin-secure.rule=Host(`pma.unc.avoup.com`)"  
+      - "traefik.http.routers.phpmyadmin-secure.entrypoints=web"                                   
+      - "traefik.http.routers.phpmyadmin-secure.middlewares=redirect-to-https"
+      - "traefik.http.middlewares.auth.basicauth.users=Gustaavolp:$$2y$$05$$dq4xoMGDwzOpZay90znzxOYVLfOCs9b6By4aG0ZaW4u9.y6gLBJni"  # Middleware de autenticacao
+      - "traefik.http.routers.phpmyadmin.middlewares=auth"
 
 volumes:
   db_data:

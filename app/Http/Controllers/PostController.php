@@ -470,7 +470,7 @@ if ($request->get('section') != null) {
                 'Content-Type' => 'application/json'
             ])
             ->post('https://api.openai.com/v1/completions', [
-                'model' => $input['openAiModel'],
+                'model' => 'gpt-4',
                 'prompt' => $input['postTitle'],
                 "temperature" => (float)$input['Temperature'],
                 "max_tokens"=> (int)$input['MaximumLength'],

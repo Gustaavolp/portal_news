@@ -539,7 +539,7 @@ listen('click', '#postSaveBtn', function () {
 })
 listen('change', '#categoryFilter', function () {
     $.ajax({
-        url: route('posts.categoryFilter'),
+        url: route('customer.posts.categoryFilter'),
         type: 'POST',
         data: {
             cat_id: $(this).val(),
@@ -908,7 +908,7 @@ listen('change', '#newPostImage', function (e) {
 listen('change', '#postLanguageId', function () {
     let lang_id = $(this).val()
     $.ajax({
-        url: route('posts.language'),
+        url: route('customer.posts.language'),
         type: 'POST',
         data: { data: lang_id },
         success: function (response) {
@@ -931,7 +931,7 @@ listen('change', '#postLanguageId', function () {
 
 listen('change', '#postCategoriesId', function () {
     $.ajax({
-        url: route('posts.category'),
+        url: route('customer.posts.category'),
         type: 'POST',
         data: {
             cat_id: $(this).val(),
