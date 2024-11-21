@@ -2,7 +2,7 @@
 <div>
     <div class="row">
         <div class="post-reaction">
-            <h4 class="title-reactions mt-3 mb-3">What's Your Reaction ?</h4>
+            <h4 class="title-reactions mt-3 mb-3">Qual é a sua reação?</h4>
             <div class="emoji">
                 <div>
                     <div class="d-block position-relative text-center float-left">

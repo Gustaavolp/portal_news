@@ -41,7 +41,7 @@
     <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js"
             data-turbolinks-eval="false" data-turbo-eval="false"></script>
     @routes
-   <script src="https://cdn.ckeditor.com/4.21.0/standard/ckeditor.js"></script>
+    
     <script src="https://js.stripe.com/v3/"></script>
 
     <script src="{{ asset('assets/js/third-party.js') }}"></script>

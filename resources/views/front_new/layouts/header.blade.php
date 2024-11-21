@@ -600,9 +600,9 @@
                                 <a href="{{$settings['vk_url']}}" target="_blank"> <i
                                             class="fa-brands fa-vk text-gray fs-18 me-3"></i></a>
                                 <a href="{{$settings['telegram_url']}}" target="_blank"> <i
-                                            class="fa-brands fa-telegram text-gray fs-18 me-3"></i></a>
+                                            class="fa-brands fa-telegram text-gray fs-18 me-3"></i></a> 
                                 <a href="{{$settings['youtube_url']}}" target="_blank"> <i
-                                            class="fa-brands fa-youtube text-gray fs-18 "></i></a>
+                                            class="fa-brands fa-youtube text-gray fs-18 "></i></a> 
                             </div>
                         </div>
                     </div>
